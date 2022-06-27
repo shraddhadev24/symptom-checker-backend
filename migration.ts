@@ -1,8 +1,8 @@
 import axios from "axios";
-import logger from "./config/loggerconfig";
 import { SymptomModel } from "./schema/models/symptoms";
-import { DiseaseModel } from "./schema/models/disease";
 import convert from "xml-js";
+import logger from "./config/loggerconfig";
+import { DiseaseModel } from "./schema/models/disease";
 
 export const migration = async () => {
   const sourceUrl = "http://www.orphadata.org/data/xml/en_product4.xml"
@@ -10,9 +10,8 @@ export const migration = async () => {
 
   const res = await axios.get(sourceUrl);
 
-  const convertedData = convert.xml2js(res.data, {
+  const convertedData: any = convert.xml2js(res.data, {
     compact: true,
-    spaces: 4,
   });
 
   logger.info(`Res length ${JSON.stringify(convertedData).length}`);

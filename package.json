@@ -10,7 +10,7 @@
     "lint:fix": "eslint \"**/**.{js,ts}\" --fix",
     "tsc": "tsc",
     "cp-package": "copyfiles package.json dist/",
-    "build": "run-s clean lint tsc cp-package"
+    "build": "npm run tsc && npm run cp-package"
   },
   "keywords": [],
   "author": "",

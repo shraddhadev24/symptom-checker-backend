@@ -18,7 +18,7 @@
         "preserveConstEnums": true,
         "sourceMap": false,
         "esModuleInterop": true,
-        "outDir": "functions",
+        "outDir": "dist",
         "noImplicitReturns": true,
         "resolveJsonModule": true
     },
