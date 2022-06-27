@@ -1,0 +1,137 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Symptom Checker APIs",
+        "description": "Description goes here...",
+        "contact": {
+            "email": "shraddhagoelwork@gmail.com"
+        }
+    },
+    "host": "localhost:8005",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/diagnos": {
+            "post": {
+                "tags": [
+                    "diagnos"
+                ],
+                "description": "Predict diseases",
+                "consumes": "application/x-www-form-urlencoded",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "symptoms",
+                        "required": true,
+                        "in": "body",
+                        "type": "array",
+                        "description": "Symptoms HpoIds"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "example": {
+                                "success": true,
+                                "data": []
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error",
+                        "schema": {
+                            "example": {
+                                "status": 400,
+                                "success": false,
+                                "message": "Error Message"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/symptoms": {
+            "get": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "description": "Get List of Symptoms",
+                "consumes": "application/x-www-form-urlencoded",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search",
+                        "required": true,
+                        "in": "query",
+                        "type": "string",
+                        "description": "Symptom Name or HPO ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "example": {
+                                "success": true,
+                                "data":[]
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error",
+                        "schema": {
+                            "example": {
+                                "status": 400,
+                                "success": false,
+                                "message": "Error Message"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/migration": {
+            "get": {
+                "tags": [
+                    "Migration"
+                ],
+                "description": "Do Migration from source to DB",
+                "consumes": "application/x-www-form-urlencoded",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "example": {
+                                "success": true
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error",
+                        "schema": {
+                            "example": {
+                                "status": 400,
+                                "success": false,
+                                "message": "Error Message"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
