@@ -8,7 +8,7 @@
             "email": "shraddhagoelwork@gmail.com"
         }
     },
-    "host": "localhost:8005",
+    "host": "https://symptom-checker-mini.herokuapp.com",
     "basePath": "/api",
     "schemes": [
         "http"
@@ -72,7 +72,7 @@
                 "parameters": [
                     {
                         "name": "search",
-                        "required": true,
+                        "required": false,
                         "in": "query",
                         "type": "string",
                         "description": "Symptom Name or HPO ID"
